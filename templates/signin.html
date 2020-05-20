@@ -1,0 +1,13 @@
+<h2>Login Page</h2>
+
+{% if form.errors %}
+    <p>username or password not correct</p>
+{% endif %}
+
+<form action='' method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+</form>
+
+<h5>Dont have an account? <a href="{% url 'signup' %}">sign up here</a></h5>
